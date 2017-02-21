@@ -1,7 +1,5 @@
 #
-# Author:: Noah Kantrowitz <noah@coderanger.net>
-#
-# Copyright 2013-2017, Balanced, Inc.
+# Copyright 2015-2017, Noah Kantrowitz
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -16,12 +14,9 @@
 # limitations under the License.
 #
 
-#source 'https://supermarket.chef.io/'
-#extension 'halite'
-
-#group :test do
-#  cookbook 'application_git', gem: 'poise-application-git'
-#  cookbook 'git'
-#end
-source "https://supermarket.chef.io"
-metadata
+application '/opt/test_express' do
+  git 'https://github.com/poise/test_express.git'
+  javascript '0.12'
+  npm_install
+  npm_start
+end
