@@ -1,0 +1,20 @@
+module.exports = exports = {
+        userSecret              : 'topsecret',
+        s3AccessKeyId           : 'AKIAJIMKHLFTADCKMSYQ',
+        s3SecretAccessKey       : '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',
+        s3bucket                : 'texta-dev',
+        region                  : 'us-east-2',
+        s3Path                  : 'https://texta-dev.s3.amazonaws.com/',
+        piContainer             : 'profileImages/',
+        groupImageContainer     : 'groupImages/',
+        gamesContainer          : 'games/',
+        packageContainer        : 'game-packages/',
+        port                    : '9000',
+        baseUrl                 : 'textadevapi.kiwireader.com',
+        sendgridKey             : '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',
+        plivoAuthId             : 'MANDK3ODU5MGZJZGUXOW',
+        plivoAuthToken          : 'MThjOWQyNGYwOGRlYTMxNmE3YjEyYzgyMmFlYTY2',
+        XMPPUrl                 : 'http://im.theblurapp.com:9090/plugins/restapi/v1/',
+        XMPPHost                : 'im.theblurapp.com',
+        XMPPService             : 'conference.im.theblurapp.com'
+}

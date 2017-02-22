@@ -22,7 +22,7 @@ package 'tar' if platform_family?('rhel')
 package 'git'
 package 'net-tools' # For netstat in serverspec.
 
-application "/var/www/#{app['shortname']}" do
+application "/srv/#{app['shortname']}" do
   git "#{app['app_source']['url']}" do
     deploy_key "#{app['app_source']['ssh_key']}"
     revision "#{app['app_source']['revision']}"
@@ -34,6 +34,16 @@ application "/var/www/#{app['shortname']}" do
   javascript '0.12'
   npm_install
   npm_start
+end
+
+directory "/srv/shared"
+
+cookbook_file "/srv/shared/secret.js" do
+  source "secret.js"
+  mode 0644
+end
+link "/srv/#{app['shortname']}/app/secret.js" do
+  to "/srv/shared/secret.js"
 end
 
 #include_recipe '::express'
