@@ -1,5 +1,5 @@
 #
-# Copyright 2015-2017, Noah Kantrowitz
+# Copyright 2015, Noah Kantrowitz
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,6 +14,9 @@
 # limitations under the License.
 #
 
-name 'application_javascript'
-depends 'application_git'
-depends 'poise-javascript'
+require 'poise_application_javascript/resources/javascript'
+require 'poise_application_javascript/resources/javascript_execute'
+require 'poise_application_javascript/resources/javascript_service'
+require 'poise_application_javascript/resources/node_package'
+require 'poise_application_javascript/resources/npm_install'
+require 'poise_application_javascript/resources/npm_start'

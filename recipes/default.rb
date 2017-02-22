@@ -22,14 +22,15 @@ package 'tar' if platform_family?('rhel')
 package 'git'
 package 'net-tools' # For netstat in serverspec.
 
-application "#{app['shortname']}" do
-  path "/var/www/#{app['shortname']}"
-  repository "#{app['app_source']['url']}"
-  deploy_key "#{app['app_source']['ssh_key']}"
-  revision "#{app['app_source']['revision']}"
+application "/var/www/#{app['shortname']}" do
+  git "#{app['app_source']['url']}" do
+    deploy_key "#{app['app_source']['ssh_key']}"
+    revision "#{app['app_source']['revision']}"
 #  owner node[:apache][:user]
 #  group node[:apache][:user]
-  javascript_service 'main.js'
+  end
+
+  javascript_service 'server.js'
   javascript '0.12'
   npm_install
   npm_start

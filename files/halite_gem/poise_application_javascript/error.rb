@@ -1,5 +1,5 @@
 #
-# Copyright 2015-2017, Noah Kantrowitz
+# Copyright 2015, Noah Kantrowitz
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,6 +14,12 @@
 # limitations under the License.
 #
 
-name 'application_javascript'
-depends 'application_git'
-depends 'poise-javascript'
+require 'poise_application/error'
+
+module PoiseApplicationJavascript
+  # Base exception class for poise-application-javascript errors.
+  #
+  # @since 1.0.0
+  class Error < PoiseApplication::Error
+  end
+end
